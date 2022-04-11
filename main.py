@@ -1,11 +1,9 @@
 import cv2
-from playsound import playsound
 from cvzone.HandTrackingModule import HandDetector
 import time
 import numpy as np
 import  cvzone
 from pynput.keyboard import Key, Controller
-
 
 cap=cv2.VideoCapture(0)
 cap.set(3,1280)
@@ -79,7 +77,6 @@ while True:
                         print(length)
                         cv2.rectangle(img, button.pos, (w + x, h + y), (85, 123, 131), cv2.FILLED)
                         cv2.putText(img, button.text, (x + 5, y + 60), cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
-                        # playsound('sound.mp3')
                         if button.text=="x":
                             kb.press(Key.backspace)
                             kb.release(Key.backspace)
